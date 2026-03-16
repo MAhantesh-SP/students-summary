@@ -288,7 +288,7 @@ def to_excel_bytes(counts_df, rows_df, summary_df, label):
 
 # ─── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/en/thumb/0/08/IISc_Master_Seal.svg/200px-IISc_Master_Seal.svg.png", width=80)
+    st.image("https://materials.iisc.ac.in/assets/images/IISclogo.png", width=80)
     st.markdown("## 🎓 Student Analyzer")
     st.markdown("---")
     uploaded = st.file_uploader(
