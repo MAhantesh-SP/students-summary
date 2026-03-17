@@ -52,7 +52,7 @@ st.markdown("""
 
 # ─── Degree lists per programme ──────────────────────────────────────────────
 CONFIGS = {
-    "UG / Integrated": {
+    "UG ": {
         "year_from": 2020, "year_to": 2024,
         "degrees": [
             "Master of Science",
@@ -60,6 +60,10 @@ CONFIGS = {
             "B.Tech (Mathematics and Computing)",
             "Bachelor of Science (Res)_2022",
         ]
+    },
+     "PG 1-Year ": {
+        "year_from": 2024, "year_to": 2024,
+        "degrees": ["MEngg in Semiconductor Technology"]
     },
     "PG 2-Year": {
         "year_from": 2023, "year_to": 2024,
@@ -321,7 +325,7 @@ st.markdown("""
 if uploaded is None:
     st.info("👈 Upload an Excel file from the sidebar to get started.")
     st.markdown("### What this app does")
-    cols = st.columns(4)
+    cols = st.columns(5)
     for col, (name, c) in zip(cols, CONFIGS.items()):
         col.markdown(f"""
         <div class="metric-card">
@@ -392,6 +396,8 @@ if run_btn or "last_result" in st.session_state:
             display_counts = counts[counts["Program Name"] != "Total (selected degrees)"].copy()
             display_counts = display_counts[display_counts["Count"] > 0]
             st.dataframe(counts, use_container_width=True, height=600)
+
+            
 
         # Tab 2 – Summary
         with t2:
